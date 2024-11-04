@@ -1,0 +1,130 @@
+*{
+    font-family: 'Cairo', sans-serif;
+}
+html,body{
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color:black;
+}
+.container{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    perspective: 90rem;
+    perspective-origin: 30% 60%;
+}
+.div-transform{
+    display: flex;
+    transform: rotateX(10deg) rotateY(15deg) rotateZ(-9deg) scale3d(1, 1, -0.9)
+    scale(1.1) translateX(50deg); 
+}
+.card{
+    background: url(../images/waleed.jpg);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 0 18px;
+    width: 244px;
+    transition: 0.5s ease;
+    overflow-y: hidden;
+    transform: translate(0);
+}
+.card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: .85;
+}
+.card h2{
+    text-transform: capitalize;
+}
+.card h4{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 48px;
+}
+.card-1{
+    background-size: cover;
+    transform: scale(1.02);
+    margin-right: 40px;
+}
+.card-1:hover{
+    transform: scale(1.11);
+    box-shadow: -7px 4px 28px -3px #b527cf;
+}
+.card-1::before{
+    background: linear-gradient(90deg,#b527cf 0%,#3546f0 100%);
+}
+.card-2{
+    background-size: cover ;
+    transform: scale(1.01);
+    margin-right: 31px;
+}
+.card-2:hover{
+    transform: scale(1.1);
+    box-shadow: -7px 4px 28px -3px #3bd9d9;
+}
+.card-2::before{
+    background: linear-gradient(90deg,#3bd9d9 0% ,  #b527cf 100% );
+}
+.card-3{
+    background-size: cover;
+}
+.card-3:hover{
+    transform: scale(1.08);
+    box-shadow: -7px 4px 28px -3px #ff9500;
+}
+.card-3::before{
+    background: linear-gradient(90deg,#ff9500 0%,#d5cb0f 100%);
+}
+.buttom{
+    position: absolute;
+    border: none;
+    color: wheat;
+    width: 9em;
+    line-height: 2em;
+    text-align: center;
+    background: linear-gradient(90deg,#03a9f4,#ef476f, #ffeb4d, #03a9f4);
+    background-size: 300px;
+    border-radius: 20px; 
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 1;
+}
+.buttom:hover{
+    animation: animation 8s linear infinite;
+    border: none;
+}
+@keyframes animation{
+    0% {background-position: 0%; }
+    100%{background-position: 400%;}
+}
+.buttom::before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg,#03a9f4,#ef476f, #ffeb4d, #03a9f4);
+    background-size: 400%;
+    border-radius: 35%;
+    transition: 2s;
+}
+.buttom:hover::before{
+    filter: blur(20px);
+}
+.item{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:30%;
+}
